@@ -28,10 +28,9 @@ public class Control {
 		}
 		
 		// if else
-		if (1>2){
-			System.out.println("Momo");
-		} 
-		else{
+		if (1>2) {
+			System.out.println("not called");
+		} else {
 			System.out.println("called");
 		}
 	}
