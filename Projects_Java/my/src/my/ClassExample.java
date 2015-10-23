@@ -29,7 +29,6 @@ public class ClassExample {
 		}
 		// directly print value (without local variable)
 		System.out.println(room.getWidth());
-
 		System.out.println(room.calculateArea());
 	}
 
