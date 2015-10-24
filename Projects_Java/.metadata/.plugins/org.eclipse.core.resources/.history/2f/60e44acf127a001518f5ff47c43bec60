@@ -1,0 +1,7 @@
+package onepager;
+
+public class OneInAll {
+	public static int main(){
+		return 0;
+	}
+}

@@ -1,0 +1,79 @@
+package onepager;
+
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+import java.time.LocalDateTime;
+
+public class OneInAll {
+	public class Student{
+		String name;
+		int age;
+		boolean is_in = false;
+		boolean been_there = false;
+		LocalDateTime time_in;
+		LocalDateTime time_out;
+		
+		Map<String, String> info(){
+			Map<String, String> myMap = new HashMap<String, String>();
+			if(been_there){
+				myMap.put("In: ", time_in.toString());
+				if(is_in){
+					myMap.put("Status: ","In Class");
+				} else {
+					myMap.put("Out: ", time_out.toString());
+					myMap.put("Status: ","Elvis has left the building");
+				}
+			} else {
+				myMap.put("Status: ", "The student was non-precent in class!");
+			}
+		}
+			myMap.put("In: ", time_in.toString());
+			myMap.put("Out: ", time_out.toString());
+			
+			return myMap;
+		}
+		
+		void in(){
+			is_in = true;
+			been_there = true;
+			time_in = LocalDateTime.now();
+		}
+		
+		void out(){
+			is_in = false;
+			time_out = LocalDateTime.now();
+		}
+		
+	}
+	public static void main(String[] args){
+		System.out.println("My stuff");
+		final Map<String, Integer> nameToCountMap =
+				new HashMap<String, Integer>();
+		
+		//nameToCountMap.put("Ivan", 1);
+		
+		//System.out.println(nameToCountMap.get("Ivan"));
+		System.out.println("Enter a bunch of names: ");
+		int i = 0;
+		final Scanner in = new Scanner(System.in);
+		while(true){
+			
+			final String key = in.next();
+			if ((i == 30) || (key.equals("close"))){
+				break;
+			}
+			if(nameToCountMap.containsKey(key)){
+			nameToCountMap.put(key, nameToCountMap.get(key) + 1);
+			} else {
+				nameToCountMap.put(key, 1);
+			}
+		}
+		
+		in.close();
+		for (Map.Entry<String, Integer> entry : nameToCountMap.entrySet()) {
+		    System.out.println(entry);
+		}
+	}
+}

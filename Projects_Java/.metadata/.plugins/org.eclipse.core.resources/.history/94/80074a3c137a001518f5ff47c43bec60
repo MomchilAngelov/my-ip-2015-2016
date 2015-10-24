@@ -1,0 +1,16 @@
+package onepager;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class OneInAll {
+	public static void main(String[] args){
+		System.out.println("My stuff");
+		final Map<String, Integer> nameToCountMap =
+				new HashMap<String, Integer>();
+		
+		nameToCountMap.put("Ivan", 1);
+		
+		System.out.print(nameToCountMap.get("Ivas"));
+	}
+}

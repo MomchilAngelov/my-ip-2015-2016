@@ -1,0 +1,7 @@
+package onepager;
+
+public class OneInAll {
+	public static void main(String[] args){
+		System.out.println("My stuff");
+	}
+}
