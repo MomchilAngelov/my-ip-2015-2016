@@ -1,0 +1,11 @@
+package onepager;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Parser {
+	
+	void parse(String data){
+		
+	}
+}

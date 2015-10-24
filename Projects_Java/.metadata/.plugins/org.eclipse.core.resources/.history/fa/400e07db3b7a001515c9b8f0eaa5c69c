@@ -1,0 +1,15 @@
+package onepager;
+
+public class Parser {
+	
+	void parse(String data){
+		if(!data.contains(":")){
+			if(data.contains("close")){
+				System.out.println("You wanted to exit the app, we currently don't support this!");
+			}
+			
+		} else {
+			
+		}
+	}
+}

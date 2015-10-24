@@ -19,7 +19,6 @@ public class OneInAll {
 		final Scanner in = new Scanner(System.in);
 		while(true){
 			final String student = in.next();
-			String[] some_info;
 			if (!student.toLowerCase().contains(":")){
 				if(student.equals("close")){
 					break;
@@ -30,13 +29,13 @@ public class OneInAll {
 					}
 					continue;
 				}
-				System.out.println("Invalid Input!");
+				System.out.println("Bad Input");
 				continue;
 			} 
+			String[] some_info;
+			Parser parse = new Parser();
+			parse.parse(student);
 			some_info = student.split(":");
-			if (some_info[0].equals("close")){
-				break;
-			}
 			if(total_info.containsKey(some_info[0])){
 				if( (some_info[1].equals("in")) ||(some_info[1].equals("out")) || (some_info[1].equals("info")) ){
 					switch (some_info[1]){

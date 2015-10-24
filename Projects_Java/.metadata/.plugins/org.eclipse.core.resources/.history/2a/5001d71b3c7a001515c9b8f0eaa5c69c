@@ -1,0 +1,22 @@
+package onepager;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Parser {
+	
+	void parse(String data){
+		if(!data.contains(":")){
+			if(data.contains("close")){
+				System.out.println("You wanted to exit the app, we currently don't support this!");
+			}
+			if(data.contains("all")) {
+				for (Map.Entry<String, Student> entry : total_info.entrySet()) {
+				    System.out.println(entry);
+				}
+			}
+		}// else {
+			
+		//}
+	}
+}
