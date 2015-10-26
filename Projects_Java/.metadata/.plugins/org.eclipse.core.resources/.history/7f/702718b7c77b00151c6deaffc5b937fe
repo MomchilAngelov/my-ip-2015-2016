@@ -1,0 +1,10 @@
+package inheritance_example;
+
+public class Animal {
+	int age;
+	String[] name;
+	
+	void talk(){
+		
+	}
+}

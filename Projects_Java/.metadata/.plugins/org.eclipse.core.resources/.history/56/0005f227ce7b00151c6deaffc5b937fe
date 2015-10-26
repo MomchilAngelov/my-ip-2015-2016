@@ -1,0 +1,6 @@
+
+package testpack;
+
+public interface Basic_Calculator {
+	int execute(String[] args);
+}

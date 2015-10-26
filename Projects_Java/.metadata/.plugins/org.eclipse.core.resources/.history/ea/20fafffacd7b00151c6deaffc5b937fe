@@ -1,0 +1,7 @@
+package lettrywhatTanevwanted;
+
+public class CommandHandler {
+	int execute()(
+			return 0;
+	};
+}

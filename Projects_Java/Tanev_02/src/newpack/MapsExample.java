@@ -10,7 +10,7 @@ public class MapsExample {
 		
 		nameToCountMap.put("Ivan", 1);
 		
-		System.out.print(nameToCountMap.get("Ivas"));
+		System.out.print(nameToCountMap.get("Ivan"));
 		
 		
 	}
