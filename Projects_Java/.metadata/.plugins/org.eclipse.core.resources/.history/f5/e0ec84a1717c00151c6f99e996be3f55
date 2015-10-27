@@ -24,7 +24,7 @@ public class Main {
 		mapper.put("sub", new Sub());
 		mapper.put("mul", new Mul());
 		mapper.put("div", new Div());
-		mapper.put("info", new Info());
+		mapper.put("info", new Div());
 		String[] numbers_from_command;
 		
 		System.out.println("command:value1:value2");
