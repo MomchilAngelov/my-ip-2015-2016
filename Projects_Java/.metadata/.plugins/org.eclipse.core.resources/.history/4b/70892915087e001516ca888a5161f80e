@@ -8,7 +8,7 @@ public class Main {
 	public static String[] parse(String command){
 		String[] numbers = new String[3];
 		if(command.matches("\\w+\\:\\d+:\\d+")){
-			//System.out.println("Valid format");
+			System.out.println("Valid format");
 			numbers = command.split(":");
 			return numbers;
 		}
@@ -38,11 +38,9 @@ public class Main {
 			}
 			numbers_from_command = parse(name);
 			if(numbers_from_command[0].equals("Invalid")){
-				System.out.println("Invalid");
 				continue;
 			}
 			if(mapper.get(numbers_from_command[0]) == null){
-				System.out.println("No such command found! Valid commands are: sum, sub, mul, div");
 				continue;
 			}
 			result = ((Basic_Calculator) mapper.get(numbers_from_command[0])).execute(numbers_from_command);

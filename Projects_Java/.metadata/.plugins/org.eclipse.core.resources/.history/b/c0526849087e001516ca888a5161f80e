@@ -42,7 +42,6 @@ public class Main {
 				continue;
 			}
 			if(mapper.get(numbers_from_command[0]) == null){
-				System.out.println("No such command found! Valid commands are: sum, sub, mul, div");
 				continue;
 			}
 			result = ((Basic_Calculator) mapper.get(numbers_from_command[0])).execute(numbers_from_command);
