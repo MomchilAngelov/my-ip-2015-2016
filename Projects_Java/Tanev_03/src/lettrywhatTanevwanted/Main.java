@@ -19,7 +19,7 @@ public class Main {
 	
 	
 	public static void main(String[] args){
-		Map <String, Object> mapper = new HashMap<String, Object>(); 
+		Map <String, Basic_Calculator> mapper = new HashMap<String, Basic_Calculator>(); 
 		mapper.put("sum", new Add());
 		mapper.put("sub", new Sub());
 		mapper.put("mul", new Mul());
@@ -45,7 +45,7 @@ public class Main {
 				System.out.println("No such command found! Valid commands are: sum, sub, mul, div");
 				continue;
 			}
-			result = ((Basic_Calculator) mapper.get(numbers_from_command[0])).execute(numbers_from_command);
+			result = ( mapper.get(numbers_from_command[0])).execute(numbers_from_command);
 			System.out.println(result);
 		}
 		

@@ -1,5 +1,0 @@
-package commandhandler;
-
-public class CommandHandler implements CommandHandler{
-	public int execute();
-}
