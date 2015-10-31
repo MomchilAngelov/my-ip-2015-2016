@@ -3,7 +3,7 @@
 
 *Change parser as neccesary (if command is not in the format \<student\>:\<command\>)	
 
-Write the class behaviour in a class with the name, and define its behaviour in a method with a signature
+Write the class behaviour in a class with name corresponding to that in the parser contructor, and define its behaviour in a method with a signature
 
 ```java
 	public void execute(String[] command){
