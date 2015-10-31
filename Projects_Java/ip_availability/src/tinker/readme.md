@@ -5,11 +5,16 @@
 *	format <student>:<command>)
 *	- Write the class behaviour in a class with the name, and
 *	define its behaviour in a method with a signature
-*	public void execute(String[] command){}
+*
+```java
+	public void execute(String[] command){}
+```
 
-*	full class template:
-*public class <myclass> extends Command{
-*	public void execute(String[] command){
-*	//Your class behaviour
-*	}
-*}
+*full class template:
+```java
+	public class <myclass> extends Command{
+		public void execute(String[] command){
+		//Your class behaviour
+		}
+	}
+```
