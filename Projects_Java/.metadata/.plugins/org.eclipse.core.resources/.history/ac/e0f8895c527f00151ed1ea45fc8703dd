@@ -1,0 +1,7 @@
+package tinker;
+
+public class DataHolder {
+	Map<String, Command> commander = new Hashmap<String, Command>();
+	List myList = new List();
+	Map<String, Integer> students = new Hashmap<String, Integer>();
+}

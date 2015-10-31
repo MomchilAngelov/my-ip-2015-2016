@@ -1,0 +1,11 @@
+package tinker;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+public class DataHolder {
+	List<String> myList = new ArrayList<String>();
+	Map<String, Integer> students = new HashMap<String, Integer>();
+}

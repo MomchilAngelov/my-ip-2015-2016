@@ -1,0 +1,14 @@
+package tinker;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Command extends DataHolder{
+	static Map<String, Command> commander = new HashMap<String, Command>();
+	commander.commander.put("login", new Login());
+	commander.commander.put("logout", new Logout());
+	commander.commander.put("info", new Info());
+	commander.commander.put("listavailable", new ListAvailable());
+	public void execute(String[] command){
+	}
+}

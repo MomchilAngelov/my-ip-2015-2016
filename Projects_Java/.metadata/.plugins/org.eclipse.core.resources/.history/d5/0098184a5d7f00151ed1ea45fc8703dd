@@ -1,0 +1,8 @@
+package tinker;
+
+public class Info extends Command {
+	public void execute(String[] command){
+		String output = "ok:"+command[0];
+		System.out.println(output);
+	}
+}

@@ -1,0 +1,7 @@
+package tinker;
+
+public class Logout extends Command{
+	public void execute(String[] command){
+		student.add(command[0]);
+	}
+}

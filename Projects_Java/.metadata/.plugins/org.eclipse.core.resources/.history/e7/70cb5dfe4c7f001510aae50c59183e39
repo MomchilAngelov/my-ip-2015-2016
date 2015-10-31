@@ -1,0 +1,5 @@
+package ifs_are_evil;
+
+public class Logout extends Command {
+
+}

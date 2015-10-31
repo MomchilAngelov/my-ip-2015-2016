@@ -1,0 +1,12 @@
+package tinker;
+
+public class Login extends Command{
+	public void execute(String[] command){
+		student.add(command[0]);
+		if (students2count.containsKey(key)){
+			
+		} else {
+			students2count.put(command[0], 1)
+		}
+	}
+}

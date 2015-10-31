@@ -1,0 +1,8 @@
+package ifs_are_evil;
+
+public class Command {
+	public int execute(){
+		System.out.println("Supported operations: Addition, Substraction, Division, Multiplication");
+		return 0;
+	}
+}

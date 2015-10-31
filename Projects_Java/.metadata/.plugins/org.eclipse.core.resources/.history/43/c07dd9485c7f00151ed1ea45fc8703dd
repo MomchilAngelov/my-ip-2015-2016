@@ -1,0 +1,7 @@
+package tinker;
+
+public class ListAvailable extends Command {
+	for (String element : student) {
+		System.out.println(element);
+	}
+}

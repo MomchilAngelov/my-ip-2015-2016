@@ -1,0 +1,34 @@
+package tinker;
+
+public class Parser extends Command{
+	public void parse(String command){
+		if(command.contains(":")){
+			String[] broken_command = command.split(":");
+			if ( (broken_command.length == 3) && (broken_command.equals("info")) ){
+				if(student.contains(broken_command[0])){
+					commander.get(broken_command[1]).execute(broken_command);
+				} else {
+					System.out.println("error:notlogged");
+				}
+			} else if (broken_command.length == 2){
+				//If the students is loged
+				if(student.contains(broken_command[0])){
+					//if command exists
+					if (commander.containsValue(broken_command[1])){
+						commander.get(broken_command[1]).execute(broken_command);
+						System.out.println("ok");
+					} else {
+						System.out.println("error:nocommand");
+					}
+				}else {
+					System.out.println("error:notlogged");
+				}
+			} else {
+				System.out.println("Invalid input");
+			}
+			
+		} else {
+			System.out.println("Invalid input!");
+		}
+	}
+}
