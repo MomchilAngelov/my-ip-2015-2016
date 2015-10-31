@@ -2,6 +2,7 @@ package tinker;
 
 public class Parser extends Command{
 	Parser(){
+
 		Command.commander.put("login", new Login());
 		Command.commander.put("logout", new Logout());
 		Command.commander.put("info", new Info());

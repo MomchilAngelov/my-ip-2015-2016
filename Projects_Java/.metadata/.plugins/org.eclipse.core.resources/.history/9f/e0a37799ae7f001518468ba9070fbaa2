@@ -16,6 +16,7 @@ public class Main {
 				break;
 			}
 			parse.parse(name);
+			//All in the parse!
 		}
 		
 		in.close();
