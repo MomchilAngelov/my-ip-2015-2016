@@ -1,5 +1,8 @@
 package tinker;
 
+import java.util.Map;
+
+
 public class Parser extends Command{
 	public void parse(String command){
 		//for (Map.Entry<String, Command> entry : commander.entrySet()) {

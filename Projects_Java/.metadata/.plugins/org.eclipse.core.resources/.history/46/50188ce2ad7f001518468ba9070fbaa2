@@ -7,11 +7,12 @@ public class Main {
 	
 	public static void main(String[] args){
 		System.out.println("Starting!");
+		Command commander = new Command();
 		Parser parse = new Parser();
-		Command.commander.put("login", new Login());
-		Command.commander.put("logout", new Logout());
-		Command.commander.put("info", new Info());
-		Command.commander.put("listavailable", new ListAvailable());
+		commander.commander.put("login", new Login());
+		commander.commander.put("logout", new Logout());
+		commander.commander.put("info", new Info());
+		commander.commander.put("listavailable", new ListAvailable());
 		
 		final Scanner in = new Scanner(System.in);
 		
