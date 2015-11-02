@@ -1,0 +1,11 @@
+package tinker;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public abstract class Command {
+	private DataHolder data;
+	static Map<String, Command> commander = new HashMap<String, Command>();
+	public void execute(String[] command){
+	}
+}
