@@ -1,8 +1,0 @@
-package ifs_are_evil;
-
-public class Logout extends Command {
-	public void execute(){
-		//Do stuff with the list and the hashmap if needed and stuff
-		//return 0;
-	}
-}

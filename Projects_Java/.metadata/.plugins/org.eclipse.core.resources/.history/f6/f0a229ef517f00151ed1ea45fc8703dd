@@ -1,7 +1,0 @@
-package tinker;
-
-public class Command extends DataHolder{
-	//Do stuff with the list and the hashmap if needed and stuff
-	//return 0;
-}
-}
