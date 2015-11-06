@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 
 public class Main {
-	
 	public static void main(String[] args){
+		
+		
 		System.out.println("Starting!");
 		Parser parse = new Parser();
 		final Scanner in = new Scanner(System.in);

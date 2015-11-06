@@ -1,0 +1,32 @@
+package tinker;
+
+import java.util.HashMap;
+import java.util.Map;
+
+public class Parser{
+	Parser(){
+		DataHolder data = new DataHolder();
+		Map<String, Command> commander = new HashMap<String, Command>();
+		//TODO commands in a list inside parser
+		//Fix the rest of the program
+		commander.put("login", new Login(data));
+		commander.put("logout", new Logout(data));
+		commander.put("info", new Info(data));
+		commander.put("listavailable", new ListAvailable(data));
+	}
+	public void parse(String command){
+		//for (Map.Entry<String, Command> entry : commander.entrySet()) {
+		//    System.out.println(entry);
+		//}
+		if(command.contains(":")){
+			String[] broken_command = command.split(":");
+			if (commander.containsKey(broken_command[1])){
+				commander.get(broken_command[1]).execute(broken_command);
+			} else {
+				System.out.println("error:nocommand");
+			}
+		} else {
+			System.out.println("Invalid input!");
+		}
+	}
+}

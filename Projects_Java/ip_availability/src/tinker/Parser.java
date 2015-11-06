@@ -1,17 +1,19 @@
 package tinker;
 
-public class Parser extends Command{
+import java.util.HashMap;
+import java.util.Map;
+
+public class Parser{
+	private Map<String, Command> commander = new HashMap<String, Command>();
 	Parser(){
-		Command.commander.put("login", new Login());
-		Command.commander.put("logout", new Logout());
-		Command.commander.put("info", new Info());
-		Command.commander.put("listavailable", new ListAvailable());
-		Command.commander.put("gay", new Gay());
+		DataHolder data = new DataHolder();
+		commander.put("login", new Login(data));
+		commander.put("logout", new Logout(data));
+		commander.put("info", new Info(data));
+		commander.put("listavailable", new ListAvailable(data));
 	}
+	
 	public void parse(String command){
-		//for (Map.Entry<String, Command> entry : commander.entrySet()) {
-		//    System.out.println(entry);
-		//}
 		if(command.contains(":")){
 			String[] broken_command = command.split(":");
 			if (commander.containsKey(broken_command[1])){

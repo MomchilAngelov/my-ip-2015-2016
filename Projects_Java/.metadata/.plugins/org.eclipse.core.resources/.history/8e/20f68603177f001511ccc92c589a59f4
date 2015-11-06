@@ -1,8 +1,0 @@
-package my_pack;
-
-public class Student {
-	public String name;
-
-	public Student() {
-	}
-}

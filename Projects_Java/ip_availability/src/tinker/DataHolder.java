@@ -6,36 +6,28 @@ import java.util.List;
 import java.util.Map;
 
 public class DataHolder {
-	static List<String> student = new ArrayList<String>();
-	static Map<String, Integer> students2count = new HashMap<String, Integer>();
+	protected List<String> student = new ArrayList<String>();
+	protected Map<String, Integer> students2count = new HashMap<String, Integer>();
 	
-	static boolean is_here(String student1){
+	public boolean is_here(String student1){
 		return student.contains(student1);
 	}
 	
-	static void add(String student1){
+	public void add(String student1){
 		student.add(student1);
 	}
 	
-	static boolean delete(String student1){
-		if(student.contains(student1)){
-			student.remove(student1);
-			return true;
-		}
-		return false;
+	public boolean delete(String student1){
+		return student.remove(student1);
 	}
 	
-	static int count(String student1){
-			int value = students2count.containsKey(student1) ? students2count.get(student1) : 0;
-			return value;
+	public int count(String student1){
+			return students2count.containsKey(student1) ? students2count.get(student1) : 0;
+			
 	}
 	
-	static void addToHash(String student1){
-		//count(student1) ? students2count.put(student1, count(student1)) + 1) : students2count.put(student1, 1);
-		if(count(student1) > 0){
-			students2count.put(student1, count(student1) + 1);
-		} else {
-			students2count.put(student1, 1);
-		}
+	public void addToHash(String student1){
+	//	int k = count(student1) > 0  ? students2count.put(student1, count(student1) + 1) : students2count.put(student1, 1);
+		students2count.put(student1, count(student1) + 1);
 	}
 }

@@ -1,0 +1,9 @@
+package my_pack;
+
+public class EchoServerStarter {
+	private static final int _SERVER_PORT = 36912;
+
+	public static void main(String[] args){
+		final EchoServer server = new EchoServer(_SERVER_PORT);
+	}
+}

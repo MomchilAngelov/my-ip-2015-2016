@@ -1,0 +1,9 @@
+package my_pack;
+
+public class EchoServerStarter {
+	private static final int _36912 = 36912;
+
+	public static void main(String[] args){
+		new EchoServer(_36912);
+	}
+}

@@ -1,10 +1,15 @@
 package tinker;
 
 public class Logout extends Command{
+	Logout(DataHolder data) {
+		super(data);
+		// TODO Auto-generated constructor stub
+	}
+
 	public void execute(String[] command){
-		if(DataHolder.is_here(command[0])){
-			while(DataHolder.is_here(command[0])){
-				DataHolder.delete(command[0]);
+		if(data.is_here(command[0])){
+			while(data.is_here(command[0])){
+				data.delete(command[0]);
 			}
 			System.out.println("ok");
 		} else {
