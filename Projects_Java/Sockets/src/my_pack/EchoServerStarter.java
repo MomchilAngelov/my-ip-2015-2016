@@ -1,4 +1,4 @@
-package org.elsysbg.ip.sockets;
+package my_pack;
 
 import java.io.IOException;
 

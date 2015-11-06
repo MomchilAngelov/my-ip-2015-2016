@@ -1,0 +1,19 @@
+package socket;
+
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.List;
+
+import my_pack.ClientHandler;
+
+public class EchoServer {
+	private final int port;
+	private boolean running;
+	private final List<ClientHandler> clients =
+		Collections.synchronizedList(
+			new LinkedList<ClientHandler>());
+
+	public EchoServer(int port) {
+		this.port = port;
+	}
+}

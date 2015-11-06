@@ -1,0 +1,27 @@
+package socket;
+
+import java.io.IOException;
+import java.io.PrintStream;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class Server {
+	private static final int SERVER_PORT = 2000;
+	final static String hostName = "localhost";
+	
+	public static void main(String[] args) throws IOException {
+		//final EchoServer server = new EchoServer(SERVER_PORT);
+		final Socket socket = new Socket(hostName, SERVER_PORT);
+		final PrintStream out =
+		        new PrintStream(socket.getOutputStream());
+		final Scanner scanner = new Scanner(socket.getInputStream());
+		while (scanner.hasNextLine()) {
+			final String line = scanner.nextLine();
+			System.out.println(line);
+		}
+		scanner.close();
+		out.close();
+		socket.close();
+	}
+	
+}

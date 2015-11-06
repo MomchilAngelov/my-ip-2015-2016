@@ -1,9 +1,0 @@
-package tinker;
-
-public class Info extends Command {
-	public void execute(String[] command){
-		for (String element : command) {
-			System.out.print(":"+element);
-		}
-	}
-}

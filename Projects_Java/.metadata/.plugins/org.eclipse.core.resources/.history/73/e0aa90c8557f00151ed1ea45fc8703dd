@@ -1,9 +1,0 @@
-package tinker;
-
-public class Info extends Command {
-	public void execute(String[] command){
-		for (String element : currently_loged_users) {
-			System.out.print(":"+element);
-		}
-	}
-}
