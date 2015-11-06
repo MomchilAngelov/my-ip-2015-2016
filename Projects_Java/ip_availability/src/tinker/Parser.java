@@ -6,6 +6,7 @@ public class Parser extends Command{
 		Command.commander.put("logout", new Logout());
 		Command.commander.put("info", new Info());
 		Command.commander.put("listavailable", new ListAvailable());
+		Command.commander.put("gay", new Gay());
 	}
 	public void parse(String command){
 		//for (Map.Entry<String, Command> entry : commander.entrySet()) {

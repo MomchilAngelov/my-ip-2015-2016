@@ -1,7 +1,0 @@
-package lettrywhatTanevwanted;
-
-public class Sub {
-	public int execute(String[] args){
-		return Integer.valueOf(args[1]) - Integer.valueOf(args[2]);
-	}
-}

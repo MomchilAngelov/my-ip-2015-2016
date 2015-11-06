@@ -7,11 +7,13 @@ import java.util.Scanner;
 public class OneInAll {
 	public static void main(String[] args){
 		Map<String, Student> total_info = new HashMap<String, Student>();
-		Student Ivan,Petar,Go6o;
+		Student Ivan = new Student("Ivan");
+		Student Go6o = new Student("Go6o");
+		Student Petar = new Student("Petar");
 		
-		total_info.put("Ivan", Ivan = new Student("Ivan"));
-		total_info.put("Go6o", Go6o = new Student("Go6o"));
-		total_info.put("Petar", Petar= new Student("Petar"));
+		total_info.put("Ivan", Ivan);
+		total_info.put("Go6o", Go6o);
+		total_info.put("Petar", Petar);
 		
 		System.out.println("Enter data in the format: <Student>:<command>");
 		final Scanner in = new Scanner(System.in);

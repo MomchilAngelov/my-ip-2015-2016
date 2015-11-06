@@ -1,7 +1,0 @@
-package lettrywhatTanevwanted;
-
-public class Basic_Calculator extends Object{
-	int execute(){
-		return 0;
-	}
-}

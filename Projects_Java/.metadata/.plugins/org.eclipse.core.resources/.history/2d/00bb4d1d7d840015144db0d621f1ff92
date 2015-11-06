@@ -1,0 +1,7 @@
+package tinker;
+
+public class Gay {
+	public void execute(String[] command){
+	
+	}
+}

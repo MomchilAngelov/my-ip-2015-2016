@@ -1,7 +1,0 @@
-package lettrywhatTanevwanted;
-
-public class Info {
-	public int execute(String[] args){
-		return 0;
-	}
-}
