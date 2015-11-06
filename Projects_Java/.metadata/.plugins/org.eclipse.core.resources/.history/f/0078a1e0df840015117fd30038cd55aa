@@ -1,0 +1,11 @@
+package socketWork;
+
+public class ClientHandler {
+	private final static String SHUTUP = "stopServer";
+
+	public void run() {
+		// TODO Auto-generated method stub
+		
+	}
+
+}
