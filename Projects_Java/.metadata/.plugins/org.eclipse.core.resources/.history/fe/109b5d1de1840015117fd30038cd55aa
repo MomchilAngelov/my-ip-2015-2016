@@ -5,7 +5,6 @@ import java.net.ServerSocket;
 import java.net.Socket;
 
 public class Server {
-	private boolean running;
 	private final int port;
 	
 	public Server(int port){
@@ -13,19 +12,12 @@ public class Server {
 	}
 	
 	public void startServer() throws IOException{
-		running = true;
 		final ServerSocket serverSocket = new ServerSocket(port);
+		final Socket socket = serverSocket.accept();
 		
-		while(running){
-			final Socket socket = serverSocket.accept();
-			final ClientHandler client = new ClientHandler(socket,this);
-			client.run();
-		}
+		final ClientHandler client = new ClientHandler(socket);
+		client.run();
 
 		serverSocket.close();
-	}
-	
-	public void stopServer(){
-		running = false;
 	}
 }
