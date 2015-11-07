@@ -40,15 +40,12 @@ public class Server {
 		return running;
 	}
 	
-	public synchronized void stopServer() throws IOException{
+	public synchronized void stopServer(){
 		running = false;
 		
 		for(ClientHandler next: clients){
 			next.stopClient();
 		}
 	}
-	
-	public void onClientStopped (ClientHandler clientHandler){
-		clients.remove(clientHandler);
-	}
+	public void onClient 
 }

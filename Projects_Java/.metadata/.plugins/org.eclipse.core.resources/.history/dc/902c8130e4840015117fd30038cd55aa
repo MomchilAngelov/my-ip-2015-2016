@@ -3,13 +3,10 @@ package socketWork;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
-import java.util.LinkedList;
-import java.util.List;
 
 public class Server {
 	private boolean running;
 	private final int port;
-	private final List<ClientHandler> clients = new LinkedList<ClientHandler>();
 	
 	public Server(int port){
 		this.port = port;
@@ -22,7 +19,6 @@ public class Server {
 		while(isRunning()){
 			final Socket socket = serverSocket.accept();
 			final ClientHandler client = new ClientHandler(socket,this);
-			clients.add(client);
 			client.run();
 		}
 
@@ -40,15 +36,7 @@ public class Server {
 		return running;
 	}
 	
-	public synchronized void stopServer() throws IOException{
+	public synchronized void stopServer(){
 		running = false;
-		
-		for(ClientHandler next: clients){
-			next.stopClient();
-		}
-	}
-	
-	public void onClientStopped (ClientHandler clientHandler){
-		clients.remove(clientHandler);
 	}
 }

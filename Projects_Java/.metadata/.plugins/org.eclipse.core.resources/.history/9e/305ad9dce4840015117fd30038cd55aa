@@ -38,7 +38,7 @@ public class ClientHandler {
 		}
 	}
 
-	public void stopClient() throws IOException {
+	public void stopClient() {
 		// TODO Auto-generated method stub
 		socket.close();
 	}
