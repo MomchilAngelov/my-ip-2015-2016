@@ -32,10 +32,6 @@ public class Server {
 		running = true;
 	}
 	
-	public synchronized boolean isRunning(){
-		return running;
-	}
-	
 	public synchronized void stopServer(){
 		running = false;
 	}

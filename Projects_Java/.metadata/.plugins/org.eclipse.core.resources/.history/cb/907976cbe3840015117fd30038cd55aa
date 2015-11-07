@@ -29,11 +29,6 @@ public class Server {
 		if(running){
 			throw new IllegalStateException("Already Running");
 		}
-		running = true;
-	}
-	
-	public synchronized boolean isRunning(){
-		return running;
 	}
 	
 	public synchronized void stopServer(){

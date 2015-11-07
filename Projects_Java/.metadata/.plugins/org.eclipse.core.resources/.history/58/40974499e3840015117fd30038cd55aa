@@ -16,24 +16,13 @@ public class Server {
 		setRunning();
 		final ServerSocket serverSocket = new ServerSocket(port);
 		
-		while(isRunning()){
+		while(running){
 			final Socket socket = serverSocket.accept();
 			final ClientHandler client = new ClientHandler(socket,this);
 			client.run();
 		}
 
 		serverSocket.close();
-	}
-	
-	private synchronized void setRunning(){
-		if(running){
-			throw new IllegalStateException("Already Running");
-		}
-		running = true;
-	}
-	
-	public synchronized boolean isRunning(){
-		return running;
 	}
 	
 	public synchronized void stopServer(){

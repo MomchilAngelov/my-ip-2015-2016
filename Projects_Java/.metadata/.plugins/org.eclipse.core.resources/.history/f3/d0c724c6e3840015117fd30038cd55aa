@@ -25,17 +25,6 @@ public class Server {
 		serverSocket.close();
 	}
 	
-	private synchronized void setRunning(){
-		if(running){
-			throw new IllegalStateException("Already Running");
-		}
-		running = true;
-	}
-	
-	public synchronized boolean isRunning(){
-		return running;
-	}
-	
 	public synchronized void stopServer(){
 		running = false;
 	}
