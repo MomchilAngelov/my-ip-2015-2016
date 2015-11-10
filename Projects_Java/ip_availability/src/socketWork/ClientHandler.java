@@ -1,5 +1,6 @@
 package socketWork;
 
+import tinker.*;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.net.Socket;
@@ -12,13 +13,14 @@ public class ClientHandler {
 	
 	ClientHandler(Socket socket, Server server){
 		this.socket = socket;
-		this.server = server;
+		this.server = server;	
 	}
 	
 	public void run() {
 		try{
 			final PrintStream out = new PrintStream(socket.getOutputStream());
 			final Scanner scanner = new Scanner(socket.getInputStream());
+			Parser parser = new Parser();
 			
 			while(scanner.hasNextLine()){
 				final String line = scanner.nextLine();
@@ -26,7 +28,8 @@ public class ClientHandler {
 					server.stopServer();
 					break;
 				}
-				out.println(line);
+				String mystr = parser.parse(line);
+				out.println(mystr);
 			}
 			
 			scanner.close();

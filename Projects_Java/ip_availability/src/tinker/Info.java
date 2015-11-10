@@ -6,7 +6,7 @@ public class Info extends Command {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void execute(String[] command){
+	public String execute(String[] command){
 		if (command.length == 3 && command[1].equals("info")){
 			if (data.is_here(command[0])){
 				String output = "ok:"+command[2];
@@ -16,12 +16,12 @@ public class Info extends Command {
 					output += ":false:";
 				}
 				output += data.count(command[2]);
-				System.out.println(output);
+				return output;
 			} else {
-				System.out.println("error:notlogged");
+				return "error:notlogged";
 			}
 		} else {
-			System.out.println("Invalid input");
+			return "Invalid Input";
 		}
 	}
 }

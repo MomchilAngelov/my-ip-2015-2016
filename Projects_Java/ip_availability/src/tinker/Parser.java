@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class Parser{
 	private Map<String, Command> commander = new HashMap<String, Command>();
-	Parser(){
+	public Parser(){
 		DataHolder data = new DataHolder();
 		commander.put("login", new Login(data));
 		commander.put("logout", new Logout(data));
@@ -13,16 +13,16 @@ public class Parser{
 		commander.put("listavailable", new ListAvailable(data));
 	}
 	
-	public void parse(String command){
+	public String parse(String command){
 		if(command.contains(":")){
 			String[] broken_command = command.split(":");
 			if (commander.containsKey(broken_command[1])){
-				commander.get(broken_command[1]).execute(broken_command);
+				return commander.get(broken_command[1]).execute(broken_command);
 			} else {
-				System.out.println("error:nocommand");
+				return "error:nocommand";
 			}
 		} else {
-			System.out.println("Invalid input!");
+			return "Invalid Input";
 		}
 	}
 }

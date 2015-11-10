@@ -1,7 +1,9 @@
 package tinker;
 
 public class Command {
-	public void execute(String[] command){};
+	public String execute(String[] command){
+		return "null";
+	};
 	protected DataHolder data;
 	Command (DataHolder data){
 		this.data = data;

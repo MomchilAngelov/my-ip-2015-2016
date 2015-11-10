@@ -1,0 +1,9 @@
+package tinker;
+
+public class Command {
+	public String execute(String[] command){};
+	protected DataHolder data;
+	Command (DataHolder data){
+		this.data = data;
+	}
+}

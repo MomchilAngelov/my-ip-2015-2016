@@ -6,9 +6,9 @@ public class Login extends Command{
 		// TODO Auto-generated constructor stub
 	}
 
-	public void execute(String[] command){
+	public String execute(String[] command){
 		data.add(command[0]);
 		data.addToHash(command[0]);
-		System.out.println("ok");
+		return "ok";
 	}
 }

@@ -6,13 +6,15 @@ public class ListAvailable extends Command {
 		// TODO Auto-generated constructor stub
 	}
 
-	public void execute(String[] command){
+	public String execute(String[] command){
+		String myStr = "";
 		if(data.is_here(command[0])){
 			for (String element : data.student) {
-				System.out.println(element);
+				myStr += element+"\n";
 			}
+			return myStr;
 		} else {
-			System.out.println("error:notlogged");
+			return "error:notlogged";
 		}
 	}
 }
