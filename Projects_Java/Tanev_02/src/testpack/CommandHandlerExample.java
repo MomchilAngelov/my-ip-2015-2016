@@ -13,7 +13,7 @@ public class CommandHandlerExample {
 		final Scanner in = new Scanner(System.in);
 		final String command = in.next();
 		final CommandHandler handler = parse(command);
-		final int result = handler.execute();
+		final int result = handler.execute(args);
 		System.out.println("Result: "+ result);
 		in.close();
 	}

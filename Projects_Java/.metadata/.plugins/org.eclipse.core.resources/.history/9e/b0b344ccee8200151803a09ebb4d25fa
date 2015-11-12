@@ -1,9 +1,0 @@
-package tinker;
-
-public class Login extends Command{
-	public void execute(String[] command){
-		this.add(command[0]);
-		this.addToHash(command[0]);
-		System.out.println("ok");
-	}
-}

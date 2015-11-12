@@ -1,5 +1,8 @@
 package tinker;
 
+import java.util.Map;
+import java.util.Map.Entry;
+
 public class Info extends Command {
 	Info(DataHolder data) {
 		super(data);
@@ -15,7 +18,12 @@ public class Info extends Command {
 				} else {
 					output += ":false:";
 				}
-				output += data.count(command[2]);
+				output += data.users.get(command[2]).getTimesInClass().toString();
+				
+				Map<String, String> myMap = data.users.get(command[2]).getMap();
+				for( Entry<String, String> entry : myMap.entrySet()){
+					output += ":" + entry.getKey() + ":" + entry.getValue();
+				}
 				return output;
 			} else {
 				return "error:notlogged";

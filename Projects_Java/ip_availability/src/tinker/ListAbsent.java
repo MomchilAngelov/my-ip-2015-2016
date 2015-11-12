@@ -1,6 +1,5 @@
 package tinker;
 
-import java.util.Map.Entry;
 
 public class ListAbsent extends Command {
 
@@ -13,7 +12,7 @@ public class ListAbsent extends Command {
 	public String execute(String[] command){
 		if(data.isHere(command[0])){
 			String string = "ok";
-			for(String student :data.students2count.keySet()){
+			for(String student : data.students2count.keySet()){
 				if(!data.isHere(student)){
 					string += ":" + student;
 				}

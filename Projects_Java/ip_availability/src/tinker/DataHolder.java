@@ -8,6 +8,7 @@ import java.util.Map;
 public class DataHolder {
 	protected List<String> student = new ArrayList<String>();
 	protected Map<String, Integer> students2count = new HashMap<String, Integer>();
+	protected Map<String, User> users = new HashMap<String, User>();
 	
 	public boolean isHere(String student1){
 		return student.contains(student1);
@@ -28,6 +29,10 @@ public class DataHolder {
 	public int count(String student1){
 			return students2count.containsKey(student1) ? students2count.get(student1) : 0;
 			
+	}
+	
+	public void createUser(String student){
+		users.put(student, new User(student));
 	}
 	
 	public void addToHash(String student1){

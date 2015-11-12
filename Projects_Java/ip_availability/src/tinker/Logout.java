@@ -10,6 +10,7 @@ public class Logout extends Command{
 		if(data.isHere(command[0])){
 			while(data.isHere(command[0])){
 				data.delete(command[0]);
+				data.users.get(command[0]).imOut();
 			}
 			return "ok";
 		} else {

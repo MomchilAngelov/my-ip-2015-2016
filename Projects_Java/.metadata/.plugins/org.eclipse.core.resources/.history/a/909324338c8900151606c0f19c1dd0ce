@@ -1,0 +1,15 @@
+package tinker;
+
+public class User {
+	private String name;
+	private Integer timesInClass = 0;
+	
+	
+	User(String name){
+		this.name = name;
+	}
+	
+	public void increaseTimesInClass(){
+		timesInClass++;
+	}
+}
