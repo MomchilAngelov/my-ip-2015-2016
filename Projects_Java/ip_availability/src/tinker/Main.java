@@ -16,7 +16,8 @@ public class Main {
 			if(name.equals("close")){
 				break;
 			}
-			parse.parse(name);
+			System.out.println(parse.parse(name));
+			
 		}
 		
 		in.close();

@@ -9,8 +9,12 @@ public class DataHolder {
 	protected List<String> student = new ArrayList<String>();
 	protected Map<String, Integer> students2count = new HashMap<String, Integer>();
 	
-	public boolean is_here(String student1){
+	public boolean isHere(String student1){
 		return student.contains(student1);
+	}
+	
+	public boolean isInHash(String student1){
+		return students2count.containsKey(student1);
 	}
 	
 	public void add(String student1){

@@ -11,6 +11,7 @@ public class Parser{
 		commander.put("logout", new Logout(data));
 		commander.put("info", new Info(data));
 		commander.put("listavailable", new ListAvailable(data));
+		commander.put("listabsent", new ListAbsent(data));
 	}
 	
 	public String parse(String command){

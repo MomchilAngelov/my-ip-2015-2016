@@ -1,0 +1,10 @@
+package tinker;
+
+public class Absent extends Command {
+
+	Absent(DataHolder data) {
+		super(data);
+		// TODO Auto-generated constructor stub
+	}
+
+}

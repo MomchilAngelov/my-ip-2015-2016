@@ -8,9 +8,9 @@ public class Info extends Command {
 
 	public String execute(String[] command){
 		if (command.length == 3 && command[1].equals("info")){
-			if (data.is_here(command[0])){
+			if (data.isHere(command[0])){
 				String output = "ok:"+command[2];
-				if(data.is_here(command[2])){
+				if(data.isHere(command[2])){
 					output += ":true:";
 				} else {
 					output += ":false:";

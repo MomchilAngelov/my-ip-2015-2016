@@ -1,0 +1,16 @@
+package tinker;
+
+public class Absent extends Command {
+
+	Absent(DataHolder data) {
+		super(data);
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+	public String execute(String[] command){
+		data.add(command[0]);
+		data.addToHash(command[0]);
+		return "ok";
+	}
+}

@@ -8,7 +8,7 @@ public class ListAvailable extends Command {
 
 	public String execute(String[] command){
 		String myStr = "";
-		if(data.is_here(command[0])){
+		if(data.isHere(command[0])){
 			for (String element : data.student) {
 				myStr += element+"\n";
 			}
