@@ -7,11 +7,9 @@ public class Login extends Command{
 	}
 
 	public String execute(String[] command){
-		data.add(command[0]);
-		data.addToHash(command[0]);
 		if(data.users.containsKey(command[0])){
 			if(data.users.get(command[0]).isHere()){
-				return "Already logged";
+				return "";
 			} else {
 				data.users.get(command[0]).imIn();
 				data.users.get(command[0]).increaseTimesInClass();

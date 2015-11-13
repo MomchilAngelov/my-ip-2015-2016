@@ -6,7 +6,6 @@ import java.util.Map.Entry;
 public class Info extends Command {
 	Info(DataHolder data) {
 		super(data);
-		// TODO Auto-generated constructor stub
 	}
 
 	public String execute(String[] command){
@@ -18,11 +17,20 @@ public class Info extends Command {
 				} else {
 					output += ":false:";
 				}
+				if(!data.users.containsKey(command[2])){
+					output += "0";
+					return output;
+				}
 				output += data.users.get(command[2]).getTimesInClass().toString();
 				
 				Map<String, String> myMap = data.users.get(command[2]).getMap();
 				for( Entry<String, String> entry : myMap.entrySet()){
-					output += ":" + entry.getKey() + ":" + entry.getValue();
+					output += ":" + entry.getKey();
+					if(entry.getValue().equals("")){
+						continue;
+					} else {
+						output+= ":" + entry.getValue();
+					}
 				}
 				return output;
 			} else {

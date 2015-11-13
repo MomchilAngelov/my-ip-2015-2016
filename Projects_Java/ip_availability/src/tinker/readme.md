@@ -1,3 +1,4 @@
+#OBSOLETE
 ##If you want to add a command to the app
 *Create a new instance of it in the contructor of parser, and tag it with a string for input comparison
 

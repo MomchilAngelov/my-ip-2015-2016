@@ -1,5 +1,7 @@
 package socketWork;
 
+
+import tinker.*;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -9,10 +11,12 @@ import java.util.List;
 public class Server {
 	private boolean running;
 	private final int port;
+	private Parser parser;
 	private final List<ClientHandler> clients = new LinkedList<ClientHandler>();
 	
 	public Server(int port){
 		this.port = port;
+		parser = new Parser();
 	}
 	
 	public void startServer() throws IOException{
@@ -34,6 +38,11 @@ public class Server {
 			throw new IllegalStateException("Already Running");
 		}
 		running = true;
+	}
+	
+	public synchronized String execute(String command){
+		String responce = this.parser.parse(command);
+		return responce;
 	}
 	
 	public synchronized boolean isRunning(){

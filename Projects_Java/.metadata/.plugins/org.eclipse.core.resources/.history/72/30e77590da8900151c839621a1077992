@@ -1,0 +1,9 @@
+package s;
+
+import java.text.SimpleDateFormat;
+
+public class Main {
+	public static void main(String[] args){
+		SimpleDateFormat format = new SimpleDateFormat("yyyyMMddHHmmss.SSS'Z'");
+	}
+}
