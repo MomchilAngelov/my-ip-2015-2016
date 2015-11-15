@@ -1,0 +1,41 @@
+package socketWork;
+
+import java.util.Map;
+import java.util.Map.Entry;
+
+public class Info extends Command {
+	Info(DataHolder data) {
+		super(data);
+	}
+
+	public String execute(String[] command, User user){
+		if (command.length == 3 && command[1].equals("info")){
+			if (data.isHere(command[0])){
+				String output = "ok:"+command[2];
+				
+				output += (data.isHere(command[2])) ? ":true:" : ":false:"; 
+				
+				if(user.getServer().isHere(command[2])){
+					output += "0";
+					return output;
+				}
+				output += data.users.get(command[2]).getTimesInClass().toString();
+				
+				Map<String, String> myMap = data.users.get(command[2]).getMap();
+				for( Entry<String, String> entry : myMap.entrySet()){
+					output += ":" + entry.getKey();
+					if(entry.getValue().equals("")){
+						continue;
+					} else {
+						output+= ":" + entry.getValue();
+					}
+				}
+				return output;
+			} else {
+				return "error:notlogged";
+			}
+		} else {
+			return "Invalid Input";
+		}
+	}
+}

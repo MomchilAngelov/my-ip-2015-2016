@@ -1,0 +1,61 @@
+package socketWork;
+
+import java.io.IOException;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.LinkedList;
+import java.util.List;
+
+public class Server {
+	private boolean running;
+	private final int port;
+	private Parser parser;
+	private final List<User> clients = new LinkedList<User>();
+	
+	public Server(int port){
+		this.port = port;
+		parser = new Parser();
+	}
+	
+	public void startServer() throws IOException{
+		setRunning();
+		final ServerSocket serverSocket = new ServerSocket(port);
+		
+		while(isRunning()){
+			final Socket socket = serverSocket.accept();
+			final User client = new User(this,socket);
+			clients.add(client);
+			client.run();
+		}
+
+		serverSocket.close();
+	}
+	
+	private synchronized void setRunning(){
+		if(running){
+			throw new IllegalStateException("Already Running");
+		}
+		running = true;
+	}
+	
+	public synchronized String execute(String command, Socket socket, Server server){
+		String responce = this.parser.parse(command, socket, server);
+		return responce;
+	}
+	
+	public synchronized boolean isRunning(){
+		return running;
+	}
+	
+	public synchronized void stopServer() throws IOException{
+		running = false;
+		
+		for(User next: clients){
+			next.stopClient();
+		}
+	}
+	
+	public void onClientStopped (User user){
+		clients.remove(user);
+	}
+}

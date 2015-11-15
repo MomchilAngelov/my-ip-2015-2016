@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <launchConfiguration type="org.eclipse.jdt.launching.localJavaApplication">
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
-<listEntry value="/ip_availability/src/tinker/Main.java"/>
+<listEntry value="/ip_availability/src/socketWork/Main.java"/>
 </listAttribute>
 <listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
 <listEntry value="1"/>
 </listAttribute>
-<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="tinker.Main"/>
+<stringAttribute key="org.eclipse.jdt.launching.MAIN_TYPE" value="socketWork.Main"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROJECT_ATTR" value="ip_availability"/>
 </launchConfiguration>

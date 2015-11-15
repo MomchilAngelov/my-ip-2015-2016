@@ -1,0 +1,99 @@
+package socketWork;
+
+import java.util.Map;
+import java.util.Scanner;
+import java.io.IOException;
+import java.io.PrintStream;
+import java.net.Socket;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.LinkedHashMap;
+
+public class User {
+	private String name;
+	private boolean isIn;
+	private Integer timesInClass = 0;
+	private String lastEntry;
+	private Map<String, String> dates = new LinkedHashMap<String, String>();
+	private final Socket socket;
+	private final Server server;
+
+	User(Server server, Socket socket){
+		this.socket = socket;
+		this.server = server;	
+	}
+	
+	private String getCurrentTimeStamp() {
+		SimpleDateFormat sdfDate = new SimpleDateFormat("yyyy-MM-d'T'HH_mm_ss.SSSZ");
+	    Date now = new Date();
+	    String strDate = sdfDate.format(now);
+	    return strDate;
+	}
+	
+	public void increaseTimesInClass(){
+		timesInClass++;
+	}
+	
+	public Integer getTimesInClass(){
+		return this.timesInClass;
+	}
+	
+	public String getName(){
+		return this.name;
+	}
+	
+	public void imIn(){
+		String in = getCurrentTimeStamp();
+		dates.put(in, "");
+		this.lastEntry = in;
+		this.isIn = true;
+	}
+	
+	public void imOut(){
+		String out = getCurrentTimeStamp();
+		dates.put(lastEntry, out);
+		this.isIn = false;
+	}
+	
+	public boolean isHere(){
+		return this.isIn;
+	}
+	
+	public Map<String, String> getMap(){
+		return this.dates;
+	}
+	
+	public void run() {
+		try{
+			PrintStream out = new PrintStream(socket.getOutputStream());
+			Scanner scanner = new Scanner(socket.getInputStream());
+			
+			while(scanner.hasNextLine()){
+				final String line = scanner.nextLine();
+				if(line.matches("(\\w)*:shutdown")){
+					server.stopServer();
+					break;
+				}
+				String responce = server.execute(line, this);
+				out.println(responce);
+			}
+			
+			scanner.close();
+			out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			server.onClientStopped(this);
+		}
+	}
+
+	public void stopClient() throws IOException {
+		// TODO Auto-generated method stub
+		socket.close();
+	}
+
+	public void name(String student) {
+		// TODO Auto-generated method stub
+		this.name = student;
+	}
+}

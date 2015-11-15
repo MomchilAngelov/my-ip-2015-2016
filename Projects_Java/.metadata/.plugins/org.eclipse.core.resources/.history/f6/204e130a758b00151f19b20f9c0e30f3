@@ -1,0 +1,13 @@
+package socketWork;
+
+import java.net.Socket;
+
+public class Command {
+	public String execute(String[] command, Socket socket, Server server){
+		return "null";
+	};
+	protected DataHolder data;
+	Command (DataHolder data){
+		this.data = data;
+	}
+}

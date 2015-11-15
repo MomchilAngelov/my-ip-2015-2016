@@ -1,0 +1,22 @@
+package socketWork;
+
+import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
+
+public class DataHolder {
+	
+	public boolean isHere(String student1){
+		if (users.containsKey(student1)){
+			return users.get(student1).isHere();
+		} else {
+			return false;
+		}
+	}
+	
+	public void createUser(String student, Socket socket, Server server){
+		User user = new User(server, socket);
+		user.name(student);
+		users.put(student, user);
+	}
+}

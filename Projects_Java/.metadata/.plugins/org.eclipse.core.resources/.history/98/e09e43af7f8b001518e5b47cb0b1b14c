@@ -1,0 +1,7 @@
+package my_pack;
+
+public class DriverManager {
+	DriverManager.registerDriver( 
+			new oracle.jdbc.driver.OracleDriver() 
+		);
+}

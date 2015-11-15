@@ -5,7 +5,7 @@ import java.io.PrintStream;
 import java.net.Socket;
 import java.util.Scanner;
 
-public class ClientHandler {
+public class ClientHandler implements Runnable{
 	private final static String SHUTUP = "stopServer";
 	private final Socket socket;
 	private final Server server;

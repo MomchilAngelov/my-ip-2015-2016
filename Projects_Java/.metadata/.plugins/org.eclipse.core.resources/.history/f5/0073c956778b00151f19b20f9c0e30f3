@@ -1,0 +1,23 @@
+package socketWork;
+
+public class Login extends Command{
+	Login(DataHolder data) {
+		super(data);
+		// TODO Auto-generated constructor stub
+	}
+
+	public String execute(String[] command, User user){
+	
+		if(user.isHere()){
+			return "";
+		} else {
+			user.imIn();
+			user.increaseTimesInClass();
+			return "ok";
+		}
+		user.setName(command[0]);
+		user.imIn();
+		user.increaseTimesInClass();
+		return "ok";
+	}
+}
