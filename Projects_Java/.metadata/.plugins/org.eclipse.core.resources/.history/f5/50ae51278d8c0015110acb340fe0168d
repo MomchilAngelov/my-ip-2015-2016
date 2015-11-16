@@ -15,11 +15,11 @@ public class Parser{
 		commander.put("shutdown", new Shutdown(data));
 	}
 	
-	public String parse(String command){
+	public String parse(String command, ClientHandler clientHandler){
 		if(command.contains(":")){
 			String[] broken_command = command.split(":");
 			if (commander.containsKey(broken_command[1])){
-				return commander.get(broken_command[1]).execute(broken_command);
+				return commander.get(broken_command[1]).execute(broken_command, clientHandler);
 			} else {
 				return "error:nocommand";
 			}

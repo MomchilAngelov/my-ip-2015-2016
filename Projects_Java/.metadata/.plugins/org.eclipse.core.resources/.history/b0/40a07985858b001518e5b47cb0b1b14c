@@ -24,7 +24,7 @@ public class Parser{
 				return "error:nocommand";
 			}
 		} else {
-			return "";
+			return "Invalid Input";
 		}
 	}
 }

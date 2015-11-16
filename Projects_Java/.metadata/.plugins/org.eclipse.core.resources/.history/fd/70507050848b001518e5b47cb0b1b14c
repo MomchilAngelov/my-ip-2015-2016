@@ -1,7 +1,6 @@
 package socketWork;
 
 import java.util.Map;
-import java.net.Socket;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.LinkedHashMap;
@@ -9,8 +8,6 @@ import java.util.LinkedHashMap;
 public class User {
 	private String name;
 	private boolean isIn;
-	private Socket socket;
-	private Server server;
 	private Integer timesInClass = 0;
 	private String lastEntry; 
 	private Map<String, String> dates = new LinkedHashMap<String, String>();

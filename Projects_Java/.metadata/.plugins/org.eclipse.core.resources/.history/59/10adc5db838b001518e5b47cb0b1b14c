@@ -67,10 +67,6 @@ public class Server {
 	}
 	
 	public void removeUser(String name){
-		users.remove(name);
-	}
-	
-	public User getUser(String name){
-		return users.get(name);
+		users.remove(name)
 	}
 }

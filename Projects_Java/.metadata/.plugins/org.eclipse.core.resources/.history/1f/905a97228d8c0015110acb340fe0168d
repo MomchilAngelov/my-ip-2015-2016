@@ -42,7 +42,7 @@ public class Server {
 	}
 	
 	public synchronized String execute(String command){
-		String responce = this.parser.parse(command);
+		String responce = this.parser.parse(command, clientHandler);
 		return responce;
 	}
 	

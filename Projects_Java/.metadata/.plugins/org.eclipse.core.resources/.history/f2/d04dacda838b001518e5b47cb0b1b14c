@@ -61,16 +61,4 @@ public class Server {
 	public void onClientStopped (ClientHandler clientHandler){
 		clients.remove(clientHandler);
 	}
-	
-	public void putUser(String name, User user){
-		users.put(name, user);
-	}
-	
-	public void removeUser(String name){
-		users.remove(name);
-	}
-	
-	public User getUser(String name){
-		return users.get(name);
-	}
 }
