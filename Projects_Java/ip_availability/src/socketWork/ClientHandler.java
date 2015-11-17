@@ -17,21 +17,21 @@ public class ClientHandler implements Runnable{
 	
 	public void run() {
 		try{
-			final PrintStream out = new PrintStream(socket.getOutputStream());
-			final Scanner scanner = new Scanner(socket.getInputStream());
-			
-			while(scanner.hasNextLine()){
-				final String line = scanner.nextLine();
-				if(SHUTUP.equals(line)){
-					server.stopServer();
-					break;
+			final PrintStream out = 
+					new PrintStream(socket.getOutputStream());
+				final Scanner scanner =
+					new Scanner(socket.getInputStream());
+				while (scanner.hasNextLine()) {
+					final String line = scanner.nextLine();
+					if (SHUTUP.equals(line)) {
+						server.stopServer();
+						break;
+					}
+					String outcome = server.execute(line, this.server, this.socket);
+					out.println(outcome);
 				}
-				String responce = server.execute(line);
-				out.println(responce);
-			}
-			
-			scanner.close();
-			out.close();
+				scanner.close();
+				out.close();
 		} catch (IOException e) {
 			e.printStackTrace();
 		} finally {

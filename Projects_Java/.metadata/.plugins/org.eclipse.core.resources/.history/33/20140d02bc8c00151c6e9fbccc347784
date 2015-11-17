@@ -1,0 +1,46 @@
+package socketWork;
+
+import java.io.IOException;
+import java.io.PrintStream;
+import java.net.Socket;
+import java.util.Scanner;
+
+public class ClientHandler implements Runnable{
+	private final static String SHUTUP = "stopServer";
+	private final Socket socket;
+	private final Server server;
+	
+	ClientHandler(Socket socket, Server server){
+		this.socket = socket;
+		this.server = server;	
+	}
+	
+	public void run() {
+		try{
+			final PrintStream out = 
+					new PrintStream(socket.getOutputStream());
+				final Scanner scanner =
+					new Scanner(socket.getInputStream());
+				while (scanner.hasNextLine()) {
+					final String line = scanner.nextLine();
+					if (SHUT_UP.equals(line)) {
+						server.stopServer();
+						break;
+					}
+					out.println(line);
+				}
+				scanner.close();
+				out.close();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} finally {
+			server.onClientStopped(this);
+		}
+	}
+
+	public void stopClient() throws IOException {
+		// TODO Auto-generated method stub
+		socket.close();
+	}
+
+}

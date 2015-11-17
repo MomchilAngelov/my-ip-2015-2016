@@ -15,8 +15,10 @@ public class User {
 	private String lastEntry; 
 	private Map<String, String> dates = new LinkedHashMap<String, String>();
 	
-	User(String name){
-		this.name = name;
+	User(String name, Server server, Socket socket){
+		/*//*/this.name = name;
+		this.socket = socket;
+		this.server = server;
 	}
 	
 	private String getCurrentTimeStamp() {
@@ -58,4 +60,5 @@ public class User {
 	public Map<String, String> getMap(){
 		return this.dates;
 	}
+	
 }

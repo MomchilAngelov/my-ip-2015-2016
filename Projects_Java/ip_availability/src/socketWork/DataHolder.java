@@ -1,5 +1,6 @@
 package socketWork;
 
+import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -14,7 +15,7 @@ public class DataHolder {
 		}
 	}
 	
-	public void createUser(String student){
-		users.put(student, new User(student));
+	public void createUser(String student, Server server, Socket socket){
+		users.put(student, new User(student, server, socket));
 	}
 }
