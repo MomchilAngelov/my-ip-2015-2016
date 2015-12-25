@@ -1,5 +1,6 @@
 package socketWork;
 
+import java.net.Socket;
 import java.util.Map.Entry;
 
 public class ListAbsent extends Command {
@@ -10,7 +11,7 @@ public class ListAbsent extends Command {
 	}
 	
 	
-	public String execute(String[] command){
+	public String execute(String[] command, Server server, Socket socket){
 		if(data.isHere(command[0])){
 			String string = "ok";
 			for(Entry <String, User> entry : data.users.entrySet()){

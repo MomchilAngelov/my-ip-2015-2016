@@ -1,5 +1,6 @@
 package socketWork;
 
+import java.net.Socket;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -8,7 +9,7 @@ public class Info extends Command {
 		super(data);
 	}
 
-	public String execute(String[] command){
+	public String execute(String[] command, Server server, Socket socket){
 		if (command.length == 3 && command[1].equals("info")){
 			if (data.isHere(command[0])){
 				String output = "ok:"+command[2];

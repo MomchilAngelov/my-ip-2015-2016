@@ -1,5 +1,6 @@
 package socketWork;
 
+import java.net.Socket;
 import java.util.Map.Entry;
 
 public class ListAvailable extends Command {
@@ -7,7 +8,7 @@ public class ListAvailable extends Command {
 		super(data);
 	}
 
-	public String execute(String[] command){
+	public String execute(String[] command, Server server, Socket socket){
 		String myStr = "ok";
 		if(data.isHere(command[0])){
 			for (Entry<String, User> entry: data.users.entrySet()) {

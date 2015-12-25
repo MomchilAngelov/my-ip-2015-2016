@@ -1,0 +1,17 @@
+$(document).ready(function(){
+	"use strict"
+	
+	$("#remove").on("click", function(){
+		var myVal = $("div");
+		_.each(myVal, function(value){
+			value.remove();
+		});
+	});
+	
+	$("#add").on("click", function(){
+		var where = $("span").parent("span");
+		var what = $("<input />");
+		what.value = "auto";
+		where.append(what);
+	});
+});

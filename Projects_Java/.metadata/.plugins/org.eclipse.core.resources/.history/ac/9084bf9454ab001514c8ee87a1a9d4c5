@@ -1,0 +1,66 @@
+$(document).ready(function() {
+	"use strict";
+
+	var ENDPOINT = "http://localhost:3000/tasks";
+
+	function taskEndPoint(taskId){
+		return ENDPOINT + "/" + taskId;
+	}
+
+	$(document).ajaxError(function(){
+		console.log("error:", arguments);
+		alert("Error!");
+	});
+
+	$.ajax(ENDPOINT, {
+		method: "GET",
+		data: {
+			title: "task1"
+		},
+		dataType: "json"
+	}).then(function(responce){
+		console.log(responce);
+	});
+
+	$.ajax(taskEndPoint(2), {
+		method: "GET",
+		dataType: "json"
+	}).then(function(responce){
+		console.log(responce);
+	});
+
+	var task = {
+		title: "task5",
+		description: "my-task-generator"
+	}
+	var newtaskID;
+
+	$.ajax(ENDPOINT, {
+		method: "POST",
+		contentType: "application/json; charset=utf-8",
+		data: JSON.stringify(task),
+		dataType: "json"
+	}).then(function(responce){
+		console.log(responce);
+		alert(responce.id);
+		newtaskID = responce.id;
+	});
+
+	$.ajax(taskEndPoint(2), {
+		method: "PUT",
+		contentType: "application/json; charset=utf-8",
+		data: JSON.stringify({
+			title: "updated",
+			description: "new description"
+		}),
+		dataType: "json"
+	}).then(function(responce){
+		console.log(responce);
+	});
+
+	createPromise.then(function(responce){
+		$.ajax(taskEndPoint(3),{
+			method: "DELETE"
+		})
+	});
+})

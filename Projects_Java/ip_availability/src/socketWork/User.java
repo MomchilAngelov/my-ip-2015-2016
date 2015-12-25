@@ -16,7 +16,7 @@ public class User {
 	private Map<String, String> dates = new LinkedHashMap<String, String>();
 	
 	User(String name, Server server, Socket socket){
-		/*//*/this.name = name;
+		this.name = name;
 		this.socket = socket;
 		this.server = server;
 	}

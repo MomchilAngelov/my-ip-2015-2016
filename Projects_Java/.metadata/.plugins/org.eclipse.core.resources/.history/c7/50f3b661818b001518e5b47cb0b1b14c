@@ -1,8 +1,0 @@
-package tinker;
-
-public class Snippet {
-	public static void main(String[] args) {
-		DriverManager.registerDriver( new oracle.jdbc.driver.OracleDriver() );
-	}
-}
-

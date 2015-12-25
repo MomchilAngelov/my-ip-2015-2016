@@ -1,0 +1,17 @@
+$(document).ready(function() {
+	"use strict";
+
+	var ENDPOINT = "http://localhost:3000/tasks";
+
+	$.ajax(ENDPOINT, {
+		method: "GET",
+		data: {
+			title: "task1"
+		},
+		dataType: "json"
+	}).then(function(responce){
+		console.log(responce);
+	}.function(error){
+		alert(error);
+	});
+})

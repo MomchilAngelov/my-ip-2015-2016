@@ -1,5 +1,6 @@
 package socketWork;
 
+import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -15,11 +16,11 @@ public class Parser{
 		commander.put("shutdown", new Shutdown(data));
 	}
 	
-	public String parse(String command){
+	public String parse(String command, Server server, Socket socket){
 		if(command.contains(":")){
 			String[] broken_command = command.split(":");
 			if (commander.containsKey(broken_command[1])){
-				return commander.get(broken_command[1]).execute(broken_command);
+				return commander.get(broken_command[1]).execute(broken_command, server, socket);
 			} else {
 				return "error:nocommand";
 			}

@@ -13,7 +13,6 @@ public class Server {
 	private final int port;
 	private Parser parser;
 	private final List<ClientHandler> clients = new LinkedList<ClientHandler>();
-	private final Map<String, User> users = new HashMap<String, User>();
 	
 	public Server(int port){
 		this.port = port;
@@ -42,7 +41,7 @@ public class Server {
 	}
 	
 	public synchronized String execute(String command, Server server, Socket socket){
-		String responce = this.parser.parse(command);
+		String responce = this.parser.parse(command, server, socket);
 		return responce;
 	}
 	
@@ -62,15 +61,4 @@ public class Server {
 		clients.remove(clientHandler);
 	}
 	
-	public void putUser(String name, User user){
-		users.put(name, user);
-	}
-	
-	public void removeUser(String name){
-		users.remove(name);
-	}
-	
-	public User getUser(String name){
-		return users.get(name);
-	}
 }
