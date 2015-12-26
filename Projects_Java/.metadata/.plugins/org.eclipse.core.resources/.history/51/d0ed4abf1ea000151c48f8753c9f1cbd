@@ -1,8 +1,0 @@
-$(document).ready(function(){
-	"use strict"
-	
-	$("#remove").on("click", function(){
-		var myVal = $("div");
-		._
-	});
-});

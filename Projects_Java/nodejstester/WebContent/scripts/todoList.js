@@ -8,9 +8,9 @@ $(document).ready(function() {
 	function showPanel(panelName) {
 		var ALL_PANELS = ["emptyPanel", "readPanel", "updatePanel", "createPanel"];
 		_.forEach(ALL_PANELS, function(nextValue) {
-			$("#"+nextValue).hide();
+			$("#"+nextValue).hide("slow");
 		});
-		$("#"+panelName).show();
+		$("#"+panelName).show("fast");
 	}
 
 	function listTasks() {
