@@ -1,5 +1,8 @@
 $(document).ready(function() {
 	"use strict";
+	
+	var currentActiveTaskID;
+	
 	var ENDPOINT = "http://localhost:3000/tasks";
 	function taskEndpoint(taskId) {
 		return ENDPOINT + "/" + taskId;
@@ -51,7 +54,7 @@ $(document).ready(function() {
 		$(document).on("click", "#tasksList [data-task-id]", function() {
 			var taskId = $(this).attr("data-task-id");
 			readTask(taskId).then(showTaskView);
-			$('#readPanel').attr('task-ID', taskId);
+			currentActiveTaskID = taskId;
 		});
 		
 		$(document).on("click", "#addTaskButton", function(){
@@ -82,7 +85,7 @@ $(document).ready(function() {
 		
 		//Press the delete button
 		$(document).on("click", ".task-action-remove", function(){
-			var taskID = $("#readPanel").attr("task-ID");
+			var taskID = currentActiveTaskID;
 			
 			var createPromise = $.ajax(taskEndpoint(taskID), {
 				method: "DELETE"
@@ -99,7 +102,7 @@ $(document).ready(function() {
 		
 		//Edit
 		$("#updatePanel").find(".task-action-ok").click(function(){
-			var taskID = $("#readPanel").attr("task-ID");
+			var taskID = currentActiveTaskID;
 			var title = $("#updatePanel").find("[name=title]").val();
 			var desc = $("#updatePanel").find("[name=description]").val();
 			$.ajax(taskEndpoint(taskID), {
